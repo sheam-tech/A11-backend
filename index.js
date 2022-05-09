@@ -12,16 +12,18 @@ app.use(express.json());
 app.post("/login", (req, res) => {
   const user = req.body;
   const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN, {
-    expiresIn: "3d",
+    expiresIn: "5d",
   });
   res.send({ accessToken });
 });
 
-// ----------MongoDb------------
+
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.gdwjv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+
+
 
 // verify Json Web Token :
 function verifyJwt(req, res, next) {

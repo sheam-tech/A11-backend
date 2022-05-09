@@ -20,8 +20,8 @@ app.post("/login", (req, res) => {
 
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-// const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.gdwjv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-const uri = "mongodb+srv://WarMongo:pbjEsdyLYH99xmVL@cluster0.gdwjv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.gdwjv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+// const uri = "mongodb+srv://WarMongo:pbjEsdyLYH99xmVL@cluster0.gdwjv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 
